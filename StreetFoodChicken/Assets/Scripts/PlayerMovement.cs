@@ -13,13 +13,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject chickenSelf;
     private float speed = 5F;
     private bool allowMove { get; set; } = false;
-
+    
     private void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-        }
-        
         //Calculate the input
         float hInput = 0;
 
