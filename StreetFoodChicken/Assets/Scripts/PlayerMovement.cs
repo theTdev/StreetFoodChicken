@@ -11,16 +11,22 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [Tooltip("The Chicken with the Animator Component")]
     public GameObject chickenSelf;
+    public GameObject powerUpManagerObj;
 
     [Tooltip("The Object to recognize what Input to use")]
     public GameObject inputObj;
     public bool allowMove = false;
     private float speed = 1.5F;
+    private int collectedChickensAmount = 0;
 
     private void FixedUpdate()
     {
         float hInput = 0;
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            collectedChickensAmount += 1;
+        }
         if (allowMove)
         {
             if (!inputObj.activeSelf)
@@ -40,8 +46,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        powerUpManagerObj.GetComponent<PowerUpManager>().UpdateChickensAmount(collectedChickensAmount);
+    }
+
     public void TurnCamera()
     {
         cameraObj.GetComponent<CameraTurningScript>().TurnCamera();
+    }
+    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //TODO: Collect chickens and Update
     }
 }
