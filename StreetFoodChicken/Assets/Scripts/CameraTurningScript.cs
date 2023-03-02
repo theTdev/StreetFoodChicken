@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class CameraTurningScript : MonoBehaviour
 {
+    public GameObject chicken;
+    public GameObject chickenSelf;
     private float lerpDuration = 1F;
     private bool rotating = false;
-    private bool camTurned = false;
 
-    private void Update()
+    public void TurnCamera()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !rotating)
+        if (!rotating)
         {
             StartCoroutine(Rotate180());
         }
@@ -19,19 +20,31 @@ public class CameraTurningScript : MonoBehaviour
 
     IEnumerator Rotate180()
     {
+        chicken.GetComponent<PlayerMovement>().allowMove = false;
         rotating = true;
         float timeElapsed = 0F;
         Quaternion startRotation = transform.rotation;
-        Quaternion endRotation = transform.rotation * Quaternion.Euler(0,camTurned ? 0 : 180, 0);
+        Quaternion endRotation = transform.rotation * Quaternion.Euler(0,180, 0);
+        float f = 0;
+
         while (timeElapsed < lerpDuration)
         {
             transform.rotation = Quaternion.Slerp(startRotation, endRotation, timeElapsed / lerpDuration);
             timeElapsed += Time.deltaTime;
+            chickenSelf.GetComponent<Animator>().SetFloat("InputY", f);
+            f += 0.1F;
             yield return null;
         }
-        
-        camTurned = !camTurned;
+
+        while (f > 0)
+        {
+            chickenSelf.GetComponent<Animator>().SetFloat("InputY", f);
+            f -= 0.1F;
+            yield return null;
+        }
         transform.rotation = endRotation;
         rotating = false;
+        yield return new WaitForSeconds(1);
+        chicken.GetComponent<PlayerMovement>().allowMove = true;
     }
 }

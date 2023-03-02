@@ -15,11 +15,10 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("The Object to recognize what Input to use")]
     public GameObject inputObj;
     public bool allowMove = false;
-    private float speed = 5F;
+    private float speed = 1.5F;
 
     private void FixedUpdate()
     {
-        //Calculate the input
         float hInput = 0;
 
         if (allowMove)
@@ -31,15 +30,18 @@ public class PlayerMovement : MonoBehaviour
             else hInput = -1;
         }
 
-        //Animate the chicken
         Animator animator = chickenSelf.GetComponent<Animator>();
         animator.SetFloat("InputX", hInput);
         
-        //Move the chicken
         if (allowMove)
         {
             Vector3 movement = new Vector3(hInput, 0, 0);
             GetComponent<CharacterController>().SimpleMove(movement * speed);
         }
+    }
+
+    public void TurnCamera()
+    {
+        cameraObj.GetComponent<CameraTurningScript>().TurnCamera();
     }
 }
