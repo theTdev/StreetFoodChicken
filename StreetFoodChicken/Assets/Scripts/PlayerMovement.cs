@@ -11,9 +11,12 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [Tooltip("The Chicken with the Animator Component")]
     public GameObject chickenSelf;
+
+    [Tooltip("The Object to recognize what Input to use")]
+    public GameObject inputObj;
+    public bool allowMove = false;
     private float speed = 5F;
-    private bool allowMove { get; set; } = false;
-    
+
     private void FixedUpdate()
     {
         //Calculate the input
@@ -21,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (allowMove)
         {
-            if (Input.GetKey(KeyCode.D))
+            if (!inputObj.activeSelf)
             {
                 hInput = 1;
             }
