@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ghosting Math 3
+  m_Shader: {fileID: 4800000, guid: ce9fbcf605ab6be44960920f3d0de4a4, type: 3}
+  m_ShaderKeywords: _CLIPTOMAXALPHA_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture:
+        m_Texture: {fileID: 2800000, guid: 0a0e8af2869fa45f78e25460db578482, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _CameraDepthFadeEnd: 2
+    - _CameraDepthFadeStart: 0
+    - _CameraDistanceFadeEnd: 30
+    - _CameraDistanceFadeStart: 20
+    - _ClipToMaxAlpha: 1
+    - _Clipping: 0.5
+    - _Cutoff: 0.5
+    - _DepthFadeEndDistance: 2
+    - _DepthFadeStartDistance: 0
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _FadeToBlack: 0
+    - _FinalNoiseAmplitude: 1
+    - _FresnelBias: 0
+    - _FresnelGhostBlending: 1
+    - _FresnelGhosting: 0
+    - _FresnelPower: 1
+    - _FresnelScale: 1
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _MeshNoiseCohesion: 1
+    - _MeshNoiseFPS: 10
+    - _MeshNoiseScale: 1
+    - _MeshNoiseSpeed: 1
+    - _MeshNoiseSpread: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _NormalGhostBlending: 1
+    - _NormalGhosting: 0
+    - _NormalGhostingOffset: 0
+    - _NormalGhostingScale: 1
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _PerlinGhostBlending: 1
+    - _PerlinGhosting: 0
+    - _PerlinNoiseScale: 3
+    - _PerlinNoiseSpeed: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _StartGhostFromFullAlpha: 0.5
+    - _UVSec: 0
+    - _UseAlbedoForGhostColor: 0
+    - _UseCameraDepthFade: 0
+    - _UseCameraDistanceFade: 0
+    - _UseClipping: 0
+    - _UseMeshNoise: 0
+    - _UseSceneDepthFade: 0
+    - _UseVerticalFading: 0
+    - _VerticalFadeBlending: 1
+    - _VerticalFadingOffset: 0.97
+    - _VerticalFadingScale: 2.97
+    - _VerticalGhostBlending: 1
+    - _VerticalGhosting: 0
+    - _VerticalGhostingOffset: 0
+    - _VerticalGhostingScale: 1
+    - _VoronoiGhostBlending: 0.682
+    - _VoronoiGhosting: 3
+    - _VoronoiNoiseScale: 3
+    - _VoronoiNoiseSpeed: 0.852
+    - _ZWrite: 1
+    - __dirty: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GhostingColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 0}
+    - _NoiseAmplitude1: {r: 1, g: 1, b: 1, a: 0}
+    - _NoiseAmplitude2: {r: 1, g: 1, b: 1, a: 0}

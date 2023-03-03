@@ -11,13 +11,17 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [Tooltip("The Chicken with the Animator Component")]
     public GameObject chickenSelf;
-    public GameObject powerUpManagerObj;
+    public GameObject goInvincibleButton;
 
     [Tooltip("The Object to recognize what Input to use")]
     public GameObject inputObj;
     public bool allowMove = false;
-    private float speed = 1.5F;
+    public bool allowMoveBackwards = true;
+    public float speed = 1.5F;
+    public GameObject chickenToon;
     private int collectedChickensAmount = 0;
+    public Material shaderMat;
+    public bool invincible = false;
 
     private void FixedUpdate()
     {
@@ -25,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            collectedChickensAmount += 1;
+            CollectChicken();
         }
         if (allowMove)
         {
@@ -33,11 +37,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 hInput = 1;
             }
-            else hInput = -1;
+            else if (allowMoveBackwards) hInput = -1;
         }
 
         Animator animator = chickenSelf.GetComponent<Animator>();
-        animator.SetFloat("InputX", hInput);
+        animator.SetFloat("InputX", invincible && hInput >= 0.5 ? 5 : hInput);
         
         if (allowMove)
         {
@@ -46,19 +50,52 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        powerUpManagerObj.GetComponent<PowerUpManager>().UpdateChickensAmount(collectedChickensAmount);
-    }
-
     public void TurnCamera()
     {
         cameraObj.GetComponent<CameraTurningScript>().TurnCamera();
     }
-    
 
-    private void OnTriggerEnter(Collider other)
+    public void CollectChicken()
     {
-        //TODO: Collect chickens and Update
+        if (!invincible)
+        {
+            this.collectedChickensAmount += 1;
+        }
+
+        if (collectedChickensAmount >= 2)
+        {
+            goInvincibleButton.SetActive(true);
+        }
+    }
+
+    public void StartGoInvincible()
+    {
+        WithdrawChickens(2);
+        StartCoroutine(GoInvincible());
+    }
+
+    IEnumerator GoInvincible()
+    {
+        allowMoveBackwards = false;
+        invincible = true;
+        speed = 10.5F;
+        Material material = chickenToon.GetComponent<SkinnedMeshRenderer>().material;
+        chickenToon.GetComponent<SkinnedMeshRenderer>().material = shaderMat;
+        yield return new WaitForSeconds(10);
+        speed = 1.5F;
+        chickenToon.GetComponent<SkinnedMeshRenderer>().material = material;
+        invincible = false;
+        allowMoveBackwards = true;
+    }
+
+    public void WithdrawChickens(int amount)
+    {
+        if (this.collectedChickensAmount <= 2) collectedChickensAmount = 0;
+        else this.collectedChickensAmount -= amount;
+
+        if (collectedChickensAmount < 2)
+        {
+            goInvincibleButton.SetActive(false);
+        }
     }
 }

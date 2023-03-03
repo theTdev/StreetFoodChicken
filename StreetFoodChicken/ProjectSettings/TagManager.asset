@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Car
+  - CollectChicken
   layers:
   - Default
   - TransparentFX

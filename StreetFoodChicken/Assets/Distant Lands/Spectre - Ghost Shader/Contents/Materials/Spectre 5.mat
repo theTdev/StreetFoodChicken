@@ -1,0 +1,242 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Spectre 5
+  m_Shader: {fileID: 4800000, guid: ce9fbcf605ab6be44960920f3d0de4a4, type: 3}
+  m_ShaderKeywords: _AXISGHOSTINGSPACE_Y _CLIPTOMAXALPHA_ON _DOTGHOSTINGSPACE_GLOBAL
+    _MESHNOISEUSESTEPPING_ON _NORMALGHOSTINGAPPLICATION_DISABLED _NORMALGHOSTINGSPACE_GLOBAL
+    _USECAMERADEPTHFADE_ON _USECAMERADISTANCEFADE_ON _USEMESHNOISE_ON _USESCENEDEPTHFADE_ON
+    _USEVERTICALFADING_ON _VERTICALGHOSTINGSPACE_VERTEX _VERTICALGHOSTINGSPACE_Y
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture:
+        m_Texture: {fileID: 2800000, guid: 0a0e8af2869fa45f78e25460db578482, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AxisBlending: 1
+    - _AxisGhosting: 1
+    - _AxisGhostingOffset: 0.56
+    - _AxisGhostingScale: 1.62
+    - _AxisGhostingSpace: 1
+    - _BumpScale: 1
+    - _CameraDepthFadeEnd: 2
+    - _CameraDepthFadeStart: 0
+    - _CameraDistanceFadeEnd: 30
+    - _CameraDistanceFadeStart: 20
+    - _ClipToMaxAlpha: 1
+    - _Clipping: 0.244
+    - _Cohesion: 5
+    - _CohesionSpreadLength: 6.6
+    - _CullMode: 2
+    - _Cutoff: 0.5
+    - _DepthFadeEndDistance: 2
+    - _DepthFadeStartDistance: 0
+    - _DetailNormalMapScale: 1
+    - _DotGhostingOffset: 0.182
+    - _DotGhostingScale: 0.311
+    - _DotGhostingSpace: 0
+    - _DstBlend: 0
+    - _EdgeLength: 15
+    - _FadeToBlack: 0
+    - _FinalNoiseAmplitude: 0.15
+    - _FinalNoiseAmplitude1: 1
+    - _Framerate: 11
+    - _FresnelBias: 0
+    - _FresnelBias1: 0
+    - _FresnelBias3: 0
+    - _FresnelBlending: 1
+    - _FresnelGhostBlending: 1
+    - _FresnelGhostBlending1: 1
+    - _FresnelGhostBlending3: 1
+    - _FresnelGhosting: 2
+    - _FresnelGhosting1: 1
+    - _FresnelGhosting3: 1
+    - _FresnelPower: 0.98
+    - _FresnelPower1: 1
+    - _FresnelPower3: 1
+    - _FresnelScale: 2
+    - _FresnelScale1: 1
+    - _FresnelScale3: 1
+    - _GhostAlphaStart: 0
+    - _GhostingNoise: 3
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _MeshNoiseCohesion: 0
+    - _MeshNoiseCohesion1: 1
+    - _MeshNoiseFPS: 32
+    - _MeshNoiseFPS1: 10
+    - _MeshNoiseFramerate: 10
+    - _MeshNoiseScale: 1.56
+    - _MeshNoiseScale1: 1
+    - _MeshNoiseSpeed: 3.08
+    - _MeshNoiseSpeed1: 1
+    - _MeshNoiseSpread: 10
+    - _MeshNoiseSpread1: 1
+    - _MeshNoiseUseStepping: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _NoiseGhostBlending: 1
+    - _NoiseScale: 3
+    - _NoiseSize: 0.1
+    - _NoiseSpeed: 1
+    - _NormalBlending: 1
+    - _NormalGhostBlending: 0.391
+    - _NormalGhostBlending1: 1
+    - _NormalGhostBlending3: 1
+    - _NormalGhosting: 0
+    - _NormalGhosting1: 1
+    - _NormalGhosting3: 1
+    - _NormalGhostingApplication: 0
+    - _NormalGhostingOffset: 0.546
+    - _NormalGhostingOffset1: 0
+    - _NormalGhostingOffset3: 0
+    - _NormalGhostingScale: 1.022
+    - _NormalGhostingScale1: 1
+    - _NormalGhostingScale3: 1
+    - _NormalGhostingSpace: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _PerlinGhostBlending: 0.309
+    - _PerlinGhostBlending1: 1
+    - _PerlinGhostBlending3: 1
+    - _PerlinGhosting: 2
+    - _PerlinGhosting1: 1
+    - _PerlinGhosting3: 1
+    - _PerlinNoise: 0
+    - _PerlinNoiseBlending: 1
+    - _PerlinNoiseScale: 3.28
+    - _PerlinNoiseScale1: 3
+    - _PerlinNoiseScale3: 3
+    - _PerlinNoiseSpeed: 2.139
+    - _PerlinNoiseSpeed1: 0
+    - _PerlinNoiseSpeed3: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _Speed: 1
+    - _SrcBlend: 1
+    - _StartGhostFromFullAlpha: 1
+    - _StartGhostFromFullAlpha1: 1
+    - _StartGhostFromFullAlpha3: 1
+    - _StartingAlpha: 0
+    - _TessMax: 25
+    - _TessMin: 10
+    - _TessPhongStrength: 0.5
+    - _TessValue: 15
+    - _TextureNoiseSpeed: 0.416
+    - _TextureNosieSpeed: 1
+    - _TintGhost: 0
+    - _UVSec: 0
+    - _UseAlbedoForGhostColor: 0
+    - _UseCameraDepthFade: 1
+    - _UseCameraDepthFade1: 1
+    - _UseCameraDistanceFade: 1
+    - _UseCameraDistanceFade1: 1
+    - _UseClipping: 0
+    - _UseMeshNoise: 1
+    - _UseSceneDepthFade: 1
+    - _UseSceneDepthFade1: 1
+    - _UseVerticalFading: 1
+    - _VerticalFadeBlending: 1
+    - _VerticalFadingOffset: 3.78
+    - _VerticalFadingScale: 3.49
+    - _VerticalGhostBlending: 1
+    - _VerticalGhostBlending1: 1
+    - _VerticalGhostBlending3: 1
+    - _VerticalGhosting: 2
+    - _VerticalGhosting1: 1
+    - _VerticalGhosting3: 1
+    - _VerticalGhostingOffset: 1
+    - _VerticalGhostingOffset1: 0
+    - _VerticalGhostingOffset3: 0
+    - _VerticalGhostingScale: 1.77
+    - _VerticalGhostingScale1: 1
+    - _VerticalGhostingScale3: 1
+    - _VerticalGhostingSpace: 1
+    - _VerticalNormalGhostingOffset: 0.182
+    - _VerticalNormalGhostingScale: 0.311
+    - _VoronoiGhostBlending: 1
+    - _VoronoiGhostBlending1: 1
+    - _VoronoiGhostBlending3: 1
+    - _VoronoiGhosting: 0
+    - _VoronoiGhosting1: 1
+    - _VoronoiGhosting3: 1
+    - _VoronoiNoise: 3
+    - _VoronoiNoiseBlending: 1
+    - _VoronoiNoiseScale: 2.11
+    - _VoronoiNoiseScale1: 3
+    - _VoronoiNoiseScale3: 3
+    - _VoronoiNoiseSpeed: 1.183
+    - _VoronoiNoiseSpeed1: 0
+    - _VoronoiNoiseSpeed3: 0
+    - _ZWrite: 1
+    - __dirty: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DotGhostingDirection: {r: 0, g: 1, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GhostingColor: {r: 0.26666668, g: 0.62352943, b: 0.29938823, a: 1}
+    - _MainColor: {r: 0.5670214, g: 1, b: 0.45882356, a: 0.77254903}
+    - _MovementSpeed2: {r: 0, g: 0, b: 0, a: 0}
+    - _NoiseAmplitude1: {r: 0.2, g: 0.5, b: 0.4, a: 0}
+    - _NoiseAmplitude2: {r: -0.1, g: 0.1, b: 0.3, a: 0}
+    - _NoiseAmplitude3: {r: 1, g: 1, b: 1, a: 0}
+    - _NormalGhostingDirection: {r: 0, g: 1, b: 0, a: 0}
+    - _Vector0: {r: 1, g: 1, b: 0, a: 0}
+    - _VerticalNormalGhostingDirection: {r: 0, g: 1, b: 0, a: 0}
+    - _VisualNoiseScale: {r: 10, g: 10, b: 10, a: 0}
+    - _VisualNoiseSpeed: {r: 10, g: 10, b: 10, a: 0}

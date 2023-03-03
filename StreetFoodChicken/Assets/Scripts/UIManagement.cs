@@ -9,6 +9,7 @@ public class UIManagement : MonoBehaviour
     public GameObject startButton;
     public GameObject walkButton;
     public GameObject chicken;
+    public GameObject invincibleButton;
 
     private void Start()
     {
@@ -17,10 +18,12 @@ public class UIManagement : MonoBehaviour
         walkButton.SetActive(false);
         PlayerMovement playerMovement = chicken.GetComponent<PlayerMovement>();
         playerMovement.allowMove = false;
+        invincibleButton.SetActive(false);
     }
     
     public void StartGame()
     {
+        invincibleButton.SetActive(false);
         titleText.SetActive(false);
         startButton.SetActive(false);
         walkButton.SetActive(true);

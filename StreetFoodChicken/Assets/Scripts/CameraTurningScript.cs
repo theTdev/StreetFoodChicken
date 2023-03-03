@@ -31,12 +31,13 @@ public class CameraTurningScript : MonoBehaviour
         {
             transform.rotation = Quaternion.Slerp(startRotation, endRotation, timeElapsed / lerpDuration);
             timeElapsed += Time.deltaTime;
-            chickenSelf.GetComponent<Animator>().SetFloat("InputY", f);
+            bool invincible = chicken.GetComponent<PlayerMovement>().invincible;
+            chickenSelf.GetComponent<Animator>().SetFloat("InputY", invincible ? 0 : f);
             f += 0.1F;
             yield return null;
         }
 
-        while (f > 0)
+        while (f > 0 && !chicken.GetComponent<PlayerMovement>().invincible)
         {
             chickenSelf.GetComponent<Animator>().SetFloat("InputY", f);
             f -= 0.1F;
