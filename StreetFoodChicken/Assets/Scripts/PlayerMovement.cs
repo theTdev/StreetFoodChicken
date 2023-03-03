@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -15,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Tooltip("The Object to recognize what Input to use")]
     public GameObject inputObj;
+
+    public GameObject uiManager;
     public bool allowMove = false;
     public bool allowMoveBackwards = true;
     public float speed = 1.5F;
@@ -22,9 +25,13 @@ public class PlayerMovement : MonoBehaviour
     private int collectedChickensAmount = 0;
     public Material shaderMat;
     public bool invincible = false;
-
+    public GameObject chickenScoreText;
+    public GameObject walkScoreText;
     private void FixedUpdate()
     {
+        double score = System.Math.Round(transform.position.x, 2);
+        walkScoreText.GetComponent<TextMeshProUGUI>().SetText((score <= 0 ? 0 : score) + " m");
+        chickenScoreText.GetComponent<TextMeshProUGUI>().SetText("" + collectedChickensAmount);
         float hInput = 0;
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -71,17 +78,34 @@ public class PlayerMovement : MonoBehaviour
     public void StartGoInvincible()
     {
         WithdrawChickens(2);
-        StartCoroutine(GoInvincible());
+        StartCoroutine(GoInvincible(15, true, true));
     }
 
-    IEnumerator GoInvincible()
+    public void RestartGoInvincible()
     {
+        allowMove = true;
+        WithdrawChickens(4);
+        StartCoroutine(GoInvincible(5, false, false));
+    }
+
+    IEnumerator GoInvincible(int time, bool playDifMusic, bool difSpeed)
+    {
+        if (playDifMusic)
+        {
+            chickenSelf.GetComponent<AudioSource>().Play();
+            GetComponent<AudioSource>().Pause();
+        }
         allowMoveBackwards = false;
         invincible = true;
-        speed = 10.5F;
+        speed = difSpeed ? 10.5F : 1.5F;
         Material material = chickenToon.GetComponent<SkinnedMeshRenderer>().material;
         chickenToon.GetComponent<SkinnedMeshRenderer>().material = shaderMat;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(time);
+        if (playDifMusic)
+        {
+            GetComponent<AudioSource>().Play();
+            chickenSelf.GetComponent<AudioSource>().Stop();
+        }
         speed = 1.5F;
         chickenToon.GetComponent<SkinnedMeshRenderer>().material = material;
         invincible = false;
@@ -96,6 +120,27 @@ public class PlayerMovement : MonoBehaviour
         if (collectedChickensAmount < 2)
         {
             goInvincibleButton.SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Car") && !invincible)
+        {
+            float score = (float) System.Math.Round(this.transform.position.x, 2);
+
+            if (PlayerPrefs.HasKey("Highscore"))
+            {
+                if (score > PlayerPrefs.GetFloat("Highscore", 0))
+                {
+                    PlayerPrefs.SetFloat("Highscore", score);
+                }
+            } else PlayerPrefs.SetFloat("Highscore", score);
+            
+            PlayerPrefs.Save();
+
+        this.allowMove = false;
+            uiManager.GetComponent<UIManagement>().EnableDeathScreen(this.collectedChickensAmount >= 4);
         }
     }
 }
